@@ -3,7 +3,6 @@ import com.example.udemyjunitmockito.model.Employee;
 import com.example.udemyjunitmockito.repository.EmployeeRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -22,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class EmployeeControllerITest extends AbstractionBaseTest {
+class EmployeeControllerITest extends AbstractContainerBaseTest {
 
     public static final long NON_EXISTING_ID = 99L;
     @Autowired

@@ -5,15 +5,15 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 
-public class AbstractionBaseTest  {
+public abstract class AbstractContainerBaseTest {
 
     static final PostgreSQLContainer POSTGRE_SQL_CONTAINER;
 
     static {
         POSTGRE_SQL_CONTAINER = new PostgreSQLContainer("postgres:latest")
-                .withDatabaseName("ems")
                 .withUsername("username")
-                .withPassword("password");
+                .withPassword("password")
+                .withDatabaseName("ems");
 
         POSTGRE_SQL_CONTAINER.start();
     }
